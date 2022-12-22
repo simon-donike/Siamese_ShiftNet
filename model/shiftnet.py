@@ -164,7 +164,7 @@ def apply_shifts(sr,thetas,regis_model,n_channels=1):
 
     return(new_images,thetas)
 
-def get_shift_loss(new_images,hr,loss_func,sr_small,hr_small,target_size=128):
+def get_shift_loss(new_images,hr,loss_func,sr_small,hr_small,target_size=128,relative_loss=False):
     #hr = hr.view(-1, n_channels, images.size(2), images.size(3))
         
     middle = hr.shape[2] //2 # get middle of tensor
@@ -179,7 +179,10 @@ def get_shift_loss(new_images,hr,loss_func,sr_small,hr_small,target_size=128):
     
     loss_before_shift = loss_func(sr_small,hr_small)
     loss_after_shift = loss_func(new_images_loss,hr_loss)
-    loss_relative = (1/loss_before_shift)*loss_after_shift
-    train_loss = loss_relative
+    if relative_loss:
+        loss_relative = (1/loss_before_shift)*loss_after_shift
+        train_loss = loss_relative
+    if not relative_loss:
+        train_loss = loss_after_shift
         
     return(train_loss,hr_loss,new_images_loss)
