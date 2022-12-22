@@ -1,0 +1,12 @@
+__pycache__
+__*
+wandb/*
+data/*
+*.tif
+*.tiff
+*.TIF
+*.TIFF
+.ipynb_checkpoints
+*.pth
+*.pt
+*.zip
