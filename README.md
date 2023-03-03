@@ -4,7 +4,7 @@ Predicts and applies X and Y affine transforms based on a 128x128 center crop of
 Adapted from [HighResNet - ShiftNet](https://github.com/ServiceNow/HighRes-net/blob/master/src/DeepNetworks/ShiftNet.py "ShiftNet")  
 
 ## Data. 
-10k 300x300px SPOT6 images. Download [here](https://drive.google.com/file/d/13q9lK8kcdZYkPvDPh_AsSKlRkTe4ercj/view?usp=share_link "Download"), unpack in "data" folder in repo root. Contaings 'train' and 'val' data, out of which only train is used for now.
+10k 300x300px SPOT6 images. Download [here](https://drive.google.com "redacted"), unpack in "data" folder in repo root. Contaings 'train' and 'val' data, out of which only train is used for now.
 
 ![Example](images/example.png "Example")
 
